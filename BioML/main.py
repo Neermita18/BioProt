@@ -117,18 +117,18 @@ class Sequence:
     def __str__(self):
         return self.sequence
     
-dna_seq = Sequence("ATCCCCCCCCCCAAAATGATAGGATGC")
-print("Length:", dna_seq.seqlen())
-print("Nucleotide Counts:", dna_seq.countnucs())
-print("GC Content:", dna_seq.gc_content())
-rna_seq = dna_seq.transDNAtoRNA()
-print("Transcribed RNA:", rna_seq)
-rna_seq = Sequence("AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA", is_rna= True)
-print("Protein sequence:", rna_seq.transRNAtoP())
-dna_seq = Sequence("ATGGCCATGGCGCCCAGAACCTGAGATCAATAGTACCCGTATTAACGGGTGA")
+# dna_seq = Sequence("ATCCCCCCCCCCAAAATGATAGGATGC")
+# print("Length:", dna_seq.seqlen())
+# print("Nucleotide Counts:", dna_seq.countnucs())
+# print("GC Content:", dna_seq.gc_content())
+# rna_seq = dna_seq.transDNAtoRNA()
+# print("Transcribed RNA:", rna_seq)
+# rna_seq = Sequence("AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA", is_rna= True)
+# print("Protein sequence:", rna_seq.transRNAtoP())
+# dna_seq = Sequence("ATGGCCATGGCGCCCAGAACCTGAGATCAATAGTACCCGTATTAACGGGTGA")
     
-print("DNA to protein (start from 0):", dna_seq.transDNAtoP())
-print("DNA all reading frames:", dna_seq.transDNAtoP_all())
-print("Amino acid for 'G':", dna_seq.pMap('G'))
-print("Amino acid for 'L':", dna_seq.pMap('L'))
-print("Amino acid for 'X':", dna_seq.pMap('X'))  # Invalid test case
+# print("DNA to protein (start from 0):", dna_seq.transDNAtoP())
+# print("DNA all reading frames:", dna_seq.transDNAtoP_all())
+# print("Amino acid for 'G':", dna_seq.pMap('G'))
+# print("Amino acid for 'L':", dna_seq.pMap('L'))
+# print("Amino acid for 'X':", dna_seq.pMap('X'))  
