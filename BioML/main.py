@@ -18,6 +18,13 @@ class Sequence:
         'CGC': 'R', 'CGA': 'R', 'CGG': 'R', 'AGA': 'R', 'AGG': 'R', 'GGU': 'G', 'GGC': 'G', 'GGA': 'G',
         'GGG': 'G'
     }
+    amino_acid_names = {
+        'F': 'Phenylalanine', 'L': 'Leucine', 'I': 'Isoleucine', 'M': 'Methionine',
+        'V': 'Valine', 'S': 'Serine', 'P': 'Proline', 'T': 'Threonine', 'A': 'Alanine',
+        'Y': 'Tyrosine', 'Stop': 'Stop codon', 'H': 'Histidine', 'Q': 'Glutamine',
+        'N': 'Asparagine', 'K': 'Lysine', 'D': 'Aspartic Acid', 'E': 'Glutamic Acid/Glycine',
+        'C': 'Cysteine', 'W': 'Tryptophan', 'R': 'Arginine', 'G': 'Glycine'
+    }
     def __init__(self, sequence, is_rna=False):
         self.is_rna = is_rna
         if is_rna:
@@ -37,17 +44,19 @@ class Sequence:
     def valid_RNAseq(self, sequence):
         for x in sequence:
             if x not in Sequence.rnanucs:
-                return False
-            
+                return False 
         return True
+    
     def revseq(self):
         return self.sequence[::-1]
+    
     def complseq(self):
         if self.is_rna:
             complement_map = str.maketrans('ACGU', 'UGCA')
         else:
             complement_map = str.maketrans('ACGT', 'TGCA')
         return self.sequence.translate(complement_map)
+    
     def complrevseq(self):
         return self.complseq()[::-1]
             
@@ -75,14 +84,14 @@ class Sequence:
             raise ValueError("Sequence is already an RNA sequence.")
         return Sequence(self.sequence.replace('T', 'U'), is_rna=True)
 
-    def translate_dna_to_protein(self):
+    def transDNAtoP(self):
         if self.is_rna:
             raise Invalid("Translation to protein can only be done from a DNA sequence.")
         rna_sequence = self.sequence.replace('T', 'U')
         rna_seq_instance = Sequence(rna_sequence, is_rna=True)
         return rna_seq_instance.transRNAtoP()
 
-    def translate_dna_all_frames(self):
+    def transDNAtoP_all(self):
         if self.is_rna:
             raise Invalid("Translation to protein can only be done from a DNA sequence.")
         rna_sequence = self.sequence.replace('T', 'U')
@@ -100,6 +109,10 @@ class Sequence:
             if amino_acid:
                 protein.append(amino_acid)
         return ''.join(protein)
+    
+    def pMap(self,letter):
+       return Sequence.amino_acid_names.get(letter, "Invalid amino acid letter")
+        
 
     def __str__(self):
         return self.sequence
@@ -114,5 +127,8 @@ rna_seq = Sequence("AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA", is_rna
 print("Protein sequence:", rna_seq.transRNAtoP())
 dna_seq = Sequence("ATGGCCATGGCGCCCAGAACCTGAGATCAATAGTACCCGTATTAACGGGTGA")
     
-print("DNA to protein (start from 0):", dna_seq.translate_dna_to_protein())
-print("DNA all reading frames:", dna_seq.translate_dna_all_frames())
+print("DNA to protein (start from 0):", dna_seq.transDNAtoP())
+print("DNA all reading frames:", dna_seq.transDNAtoP_all())
+print("Amino acid for 'G':", dna_seq.pMap('G'))
+print("Amino acid for 'L':", dna_seq.pMap('L'))
+print("Amino acid for 'X':", dna_seq.pMap('X'))  # Invalid test case

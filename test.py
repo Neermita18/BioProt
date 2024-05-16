@@ -79,22 +79,22 @@ class TestSequence(unittest.TestCase):
 
     def test_translate_dna_to_protein(self):
         seq = Sequence("ATGCCCTAG")
-        self.assertEqual(seq.translate_dna_to_protein(), "MP")
+        self.assertEqual(seq.transDNAtoP(), "MP")
 
         seq_with_stop = Sequence("ATGTAA")
-        self.assertEqual(seq_with_stop.translate_dna_to_protein(), "M")
+        self.assertEqual(seq_with_stop.transDNAtoP(), "M")
         
         with self.assertRaises(Invalid):
             rna_seq = Sequence("AUGC", is_rna=True)
-            rna_seq.translate_dna_to_protein()
+            rna_seq.transDNAtoP()
 
     def test_translate_dna_all_frames(self):
         seq = Sequence("ATGCCCTAG")
-        self.assertEqual(seq.translate_dna_all_frames(), ["MP", "CP", "AL"])
+        self.assertEqual(seq.transDNAtoP_all(), ["MP", "CP", "AL"])
 
         with self.assertRaises(Invalid):
             rna_seq = Sequence("AUGC", is_rna=True)
-            rna_seq.translate_dna_all_frames()
+            rna_seq.transDNAtoP_all()
             
     def test_transRNAtoP(self):
         rna_seq = Sequence("AUGCCCUAG", is_rna=True)
