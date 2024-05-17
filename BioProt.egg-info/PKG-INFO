@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: BioProt
+Version: 0.2.0
+Summary: A package for DNA, RNA and protein sequence manipulation
+Home-page: https://github.com/Neermita18/BioML
+Author: Neermita Bhattacharya
+Author-email: nemowbio@gmail.com
+Keywords: DNA RNA protein bioinformatics sequence computational biology genetics genome chromosomes inheritance heredity
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE

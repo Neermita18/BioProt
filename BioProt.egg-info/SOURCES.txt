@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+BioProt/__init__.py
+BioProt/main.py
+BioProt.egg-info/PKG-INFO
+BioProt.egg-info/SOURCES.txt
+BioProt.egg-info/dependency_links.txt
+BioProt.egg-info/entry_points.txt
+BioProt.egg-info/top_level.txt

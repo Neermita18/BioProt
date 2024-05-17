@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='BioML',
+    name='BioProt',
     version='0.2.0',
     description='A package for DNA, RNA and protein sequence manipulation',
     author='Neermita Bhattacharya',
@@ -24,7 +24,7 @@ setup(
     entry_points={
        
         'console_scripts': [
-            'bioml=BioML.main:main',
+            'bioprot=BioProt.main:main',
         ],
     },
         
