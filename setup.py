@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='BioML',
-    version='0.1.0',
+    version='0.2.0',
     description='A package for DNA, RNA and protein sequence manipulation',
     author='Neermita Bhattacharya',
     author_email='nemowbio@gmail.com',
@@ -21,7 +21,12 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
     ],
-   
+    entry_points={
+       
+        'console_scripts': [
+            'bioml=BioML.main:main',
+        ],
+    },
         
     
     keywords='DNA RNA protein bioinformatics sequence computational biology genetics genome chromosomes inheritance heredity',

@@ -1,0 +1,2 @@
+[console_scripts]
+bioml = BioML.main:main

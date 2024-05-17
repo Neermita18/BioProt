@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: BioML
-Version: 0.1.0
+Version: 0.2.0
 Summary: A package for DNA, RNA and protein sequence manipulation
 Home-page: https://github.com/Neermita18/BioML
 Author: Neermita Bhattacharya
@@ -17,3 +17,4 @@ Classifier: Programming Language :: Python :: 3.9
 Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
+License-File: LICENSE

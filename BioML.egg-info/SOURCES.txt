@@ -1,3 +1,4 @@
+LICENSE
 README.md
 setup.py
 BioML/__init__.py
@@ -5,4 +6,5 @@ BioML/main.py
 BioML.egg-info/PKG-INFO
 BioML.egg-info/SOURCES.txt
 BioML.egg-info/dependency_links.txt
+BioML.egg-info/entry_points.txt
 BioML.egg-info/top_level.txt

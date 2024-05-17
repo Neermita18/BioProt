@@ -1,4 +1,5 @@
-import string
+
+import sys
 class Invalid(Exception):
     def __init__(self, message):
         self.message = message
@@ -132,3 +133,24 @@ class Sequence:
 # print("Amino acid for 'G':", dna_seq.pMap('G'))
 # print("Amino acid for 'L':", dna_seq.pMap('L'))
 # print("Amino acid for 'X':", dna_seq.pMap('X'))  
+def main():
+
+    if len(sys.argv) < 2:
+        print("Usage: bioml <DNA/RNA/protein sequence>")
+        sys.exit(1)
+    
+    sequence = sys.argv[1]
+    try:
+        seq_obj = Sequence(sequence)
+        print(f"Original Sequence: {seq_obj}")
+        print(f"Reverse Sequence: {seq_obj.revseq()}")
+        print(f"Complement Sequence: {seq_obj.complseq()}")
+        print(f"Reverse Complement Sequence: {seq_obj.complrevseq()}")
+        print(f"GC Content: {seq_obj.gc_content():.2f}%")
+    except Invalid as e:
+        print(f"Error: {e.message}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+if __name__ == "__main__":
+    main()
