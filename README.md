@@ -2,7 +2,7 @@
  ### Classes provided are Sequence and Invalid. Please import these as - from BioProt import Sequence, Invalid
  ## Fuctions included in the class:
  * init method : Raises errors if a sequence is not DNA/RNA sequence but was provided to be so
-  - inputs = sequence: String, is_rna: boolean
+  * inputs = sequence: String, is_rna: boolean
  #### * valid_DNAseq() : Checks if the string input is a DNA sequence *
    #### - inputs = NIL -
  #### ~ valid_RNAseq() : Checks if the string input is an RNA sequence
