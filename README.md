@@ -1,6 +1,9 @@
  # A package designed for DNA, RNA and protein sequence analysis.
  ### Classes provided are Sequence and Invalid. Please import these as - from BioProt import Sequence, Invalid
- ## Fuctions included in the class:
+ ### Example usage: 
+ ``` from BioProt import Sequence, Invalid seq = Sequence("ATTCCGG", is_rna= False) seq.complseq() ```
+
+ ### Fuctions included in the class:
 - [ ] init method : Raises errors if a sequence is not DNA/RNA sequence but was provided to be so
   * inputs = sequence: String, is_rna: boolean
 - [ ] valid_DNAseq() : Checks if the string input is a DNA sequence *
